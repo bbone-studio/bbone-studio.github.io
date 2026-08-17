@@ -132,11 +132,14 @@ function detectLanguage() {
         urlLanguage &&
         SUPPORTED_LANGUAGES.includes(urlLanguage)
     ) {
+        // Save URL language to localStorage
+        localStorage.setItem("language", urlLanguage);
+
         return urlLanguage;
     }
 
 
-    // 2. Use the language selected by the user
+    // 2. Use the saved language
     const savedLanguage = localStorage.getItem("language");
 
     if (
