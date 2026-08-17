@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bbone</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-left">
+            <a class="social-icon" href="https://afdian.com/a/bbone""><img width="66px" src="assets/aifadian.png" alt=""></a>
+			<a class="social-icon" href="https://springbone.itch.io/"><img width="66px" src="assets/itch.png" alt=""></a>
+            <a class="social-icon" href="https://store.steampowered.com/curator/46112346-b_bone/"><img width="66px" src="assets/steam.png" alt=""></a>
+        </div>
+
+        <div class="nav-right">
+            <select id="language-select">
+                <option value="zh">中文</option>
+                <option value="en">English</option>
+                <option value="ja">日本語</option>
+                <option value="zh-tw">繁體中文</option>
+            </select>
+
+            <button id="theme-toggle" class="theme-btn">☾</button>
+
+            <a
+                class="profile-link"
+                href="about.html"
+                data-i18n="profile"
+            >
+                个人主页
+            </a>
+        </div>
+    </header>
+
+
+    <main class="page-main">
+
+        <section class="games-section">
+
+            <div class="section-title">
+                <h1 data-i18n="games_title"></h1>
+                <p data-i18n="games_intro"></p>
+            </div>
+
+
+            <div class="games-scroll">
+			
+				<a
+                    class="game-card"
+                    href="game/gympup.html"
+                >
+                    <img
+                        src="assets/gympup.jpg"
+                        class="game-cover"
+                    >
+
+                    <div class="game-info">
+                        <h2 data-i18n="gympup">GymPup</h2>
+                        <p data-i18n="gympup_type"></p>
+                    </div>
+                </a>
+
+                <a
+                    class="game-card"
+                    href="game/pondthing.html"
+                >
+                    <img
+                        src="assets/pondthing.jpg"
+                        class="game-cover"
+                    >
+
+                    <div class="game-info">
+                        <h2 data-i18n="pondthing">PondThing</h2>
+                        <p data-i18n="pondthing_type"></p>
+                    </div>
+                </a>
+
+                <a
+                    class="game-card"
+                    href="#"
+                >
+                    <div
+                        class="game-cover placeholder"
+                        data-i18n="coming_soon"
+                    ></div>
+
+                    <div class="game-info">
+                        <h2 data-i18n="new_project"></h2>
+                        <p data-i18n="coming_soon"></p>
+                    </div>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p data-i18n="copyright"></p>
+    </footer>
+
+
+    <script src="js/site.js"></script>
+
+</body>
+
+</html>
