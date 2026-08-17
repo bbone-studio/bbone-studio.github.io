@@ -122,9 +122,21 @@ const themeButton = document.getElementById("theme-toggle");
 // ============================================================
 // Language
 // ============================================================
-
 function detectLanguage() {
-    // 1. Use the language selected by the user.
+
+    // 1. Read language from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLanguage = urlParams.get("lang");
+
+    if (
+        urlLanguage &&
+        SUPPORTED_LANGUAGES.includes(urlLanguage)
+    ) {
+        return urlLanguage;
+    }
+
+
+    // 2. Use the language selected by the user
     const savedLanguage = localStorage.getItem("language");
 
     if (
@@ -134,7 +146,8 @@ function detectLanguage() {
         return savedLanguage;
     }
 
-    // 2. Otherwise use the browser language.
+
+    // 3. Use browser language
     const browserLanguage = (
         navigator.language || "zh"
     ).toLowerCase();
@@ -155,9 +168,10 @@ function detectLanguage() {
         return "zh-tw";
     }
 
+
+    // 4. Default to Simplified Chinese
     return "zh";
 }
-
 
 function applyLanguage(language) {
     const translations = I18N[language] || I18N.zh;
