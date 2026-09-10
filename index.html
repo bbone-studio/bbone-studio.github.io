@@ -7,15 +7,23 @@
     <title>bbone</title>
     <link rel="stylesheet" href="css/style.css">
 	<link rel="icon" href="assets/bbone_icon.png">
+    <script>
+        // Apply the saved theme before first paint to avoid a flash.
+        try {
+            if (localStorage.getItem("theme") === "dark") {
+                document.documentElement.classList.add("dark");
+            }
+        } catch (error) { /* storage unavailable */ }
+    </script>
 </head>
 
 <body>
 
     <header class="navbar">
         <div class="nav-left">
-            <a target="_blank" rel="noopener noreferrer" href="https://afdian.com/a/bbone""><img width="36px" src="assets/aifadian.png" alt=""></a>
+            <a target="_blank" rel="noopener noreferrer" href="https://afdian.com/a/bbone"><img width="36px" src="assets/aifadian.png" alt="爱发电"></a>
 			<a target="_blank" rel="noopener noreferrer" href="https://springbone.itch.io/"><img width="36px" src="assets/itch.png" alt=""></a>
-            <a target="_blank" rel="noopener noreferrer" href="https://store.steampowered.com/curator/46112346-b_bone/"><img width="36px" src="assets/steam.png" alt=""></a>
+            <a target="_blank" rel="noopener noreferrer" href="https://store.steampowered.com/curator/46112346-b_bone/"><img width="36px" src="assets/steam.png" alt="Steam"></a>
         </div>
 
         <div class="nav-right">
@@ -58,6 +66,7 @@
                     <img
                         src="assets/gympup.jpg"
                         class="game-cover"
+                        alt="GymPup"
                     >
 
                     <div class="game-info">
@@ -66,13 +75,14 @@
                     </div>
                 </a>
 
-                <a
+				<a
                     class="game-card"
                     href="game/pondthing.html"
                 >
                     <img
                         src="assets/pondthing.jpg"
                         class="game-cover"
+                        alt="PondThing"
                     >
 
                     <div class="game-info">
@@ -109,6 +119,8 @@
 
 
     <script src="js/site.js"></script>
+    <script src="js/fx.js"></script>
+    <script type="module" src="js/pond.js"></script>
 
 </body>
 

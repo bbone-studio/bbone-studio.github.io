@@ -21,8 +21,8 @@ const I18N = {
         copyright: "© 2026 bbone. All Rights Reserved.",
         about_title: "关于我",
         about_heading: "关于我",
-        about_intro: "我是一名独立游戏开发者，喜欢制作bara、bl、furry、叙事、解谜等类型的游戏",
-		about_midie: "您可在以下社媒中获得游戏相关动态，也可直接与我联系",
+        about_intro: "我是一名独立游戏开发者，喜欢制作bara、bl、furry、叙事、解谜等类型的游戏。您可在以下社媒中获得游戏相关动态，也可直接与我联系",
+		about_midie: "",
         pondthing_desc: "一款微恐叙事解谜游戏。在一场以死亡为终点的仪式中，主角获得了回溯时间的能力。面对不断重复的轮回与逐渐扭曲的人际关系，每一次选择都将导向截然不同的命运",
         gympup_desc: "一款兽人题材的恋爱叙事游戏，融合桌面挂机与视觉小说玩法，您将在陪伴中见证主角从身体到内心的双重成长与蜕变",
         day: "白天模式",
@@ -47,8 +47,8 @@ const I18N = {
 		copyright: "© 2026 bbone. All Rights Reserved.",
 		about_title: "About Me",
 		about_heading: "About Me",
-		about_intro: "I'm an indie game developer who enjoys creating games featuring bara, BL, furry, narrative, puzzle, and other genres",
-		about_midie: "Follow me on the social media platforms below for game updates, or feel free to contact me directly",
+		about_intro: "I'm an indie game developer who enjoys creating games featuring bara, BL, furry, narrative, puzzle, and other genres. Follow me on the social media platforms below for game updates, or feel free to contact me directly",
+		about_midie: "",
 		pondthing_desc: "A narrative puzzle game with a touch of horror. During a ritual that ends in death, the protagonist gains the ability to turn back time. Trapped in an ever-repeating cycle with increasingly twisted relationships, every choice leads to a completely different fate.",
 		gympup_desc: "A furry romance narrative game that combines desktop idle gameplay with visual novel elements. Through companionship, you'll witness the protagonist's transformation and growth, both physically and emotionally.",
 		day: "Day Mode",
@@ -73,8 +73,8 @@ const I18N = {
 		copyright: "© 2026 bbone. All Rights Reserved.",
 		about_title: "プロフィール",
 		about_heading: "プロフィール",
-		about_intro: "Bara、BL、Furry、ナラティブ、パズルなどのジャンルのゲームを制作しているインディーゲーム開発者です",
-		about_midie: "以下のSNSでゲームに関する最新情報をチェックしたり、直接ご連絡いただけます",
+		about_intro: "Bara、BL、Furry、ナラティブ、パズルなどのジャンルのゲームを制作しているインディーゲーム開発者です。以下のSNSでゲームに関する最新情報をチェックしたり、直接ご連絡いただけます",
+		about_midie: "",
 		pondthing_desc: "微ホラー系のナラティブパズルゲーム。死を終着点とする儀式の中で、主人公は時間を巻き戻す能力を手に入れる。繰り返される輪廻と徐々に歪んでいく人間関係の中、選択するたびにまったく異なる運命へと導かれていく。",
 		gympup_desc: "獣人をテーマにした恋愛ナラティブゲーム。デスクトップペットとビジュアルノベルを組み合わせ、主人公との触れ合いを通じて、身体と心の両方が成長し変化していく姿を見届けることができます。",
 		day: "昼モード",
@@ -99,8 +99,8 @@ const I18N = {
 		copyright: "© 2026 bbone. All Rights Reserved.",
 		about_title: "關於我",
 		about_heading: "關於我",
-		about_intro: "我是一名獨立遊戲開發者，喜歡製作 bara、BL、furry、敘事、解謎等類型的遊戲",
-		about_midie: "您可以在以下社群媒體獲得遊戲相關動態，也可以直接與我聯絡",
+		about_intro: "我是一名獨立遊戲開發者，喜歡製作 bara、BL、furry、敘事、解謎等類型的遊戲。您可以在以下社群媒體獲得遊戲相關動態，也可以直接與我聯絡",
+		about_midie: "",
 		pondthing_desc: "一款微恐敘事解謎遊戲。在一場以死亡為終點的儀式中，主角獲得了回溯時間的能力。面對不斷重複的輪迴與逐漸扭曲的人際關係，每一次選擇都將導向截然不同的命運。",
 		gympup_desc: "一款獸人題材的戀愛敘事遊戲，融合桌面掛機與視覺小說玩法，您將在陪伴中見證主角從身體到內心的雙重成長與蛻變。",
 		day: "白天模式",
@@ -210,6 +210,13 @@ function applyLanguage(language) {
 
 function applyTheme(theme) {
     document.body.classList.toggle(
+        "dark",
+        theme === "dark"
+    );
+
+    // Mirrored on <html> so the theme is applied before the
+    // stylesheet paints (see the bootstrap snippet in <head>).
+    document.documentElement.classList.toggle(
         "dark",
         theme === "dark"
     );

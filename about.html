@@ -12,6 +12,14 @@
 
     <link rel="stylesheet" href="css/style.css">
 	<link rel="icon" href="assets/bbone_icon.png">
+    <script>
+        // Apply the saved theme before first paint to avoid a flash.
+        try {
+            if (localStorage.getItem("theme") === "dark") {
+                document.documentElement.classList.add("dark");
+            }
+        } catch (error) { /* storage unavailable */ }
+    </script>
 </head>
 
 <body>
@@ -20,9 +28,9 @@
 
         <div class="nav-left">
 			<a class="social-icon" href="index.html">←</a>
-			<a target="_blank" rel="noopener noreferrer" href="https://afdian.com/a/bbone""><img width="36px" src="assets/aifadian.png" alt=""></a>
+			<a target="_blank" rel="noopener noreferrer" href="https://afdian.com/a/bbone"><img width="36px" src="assets/aifadian.png" alt="爱发电"></a>
 			<a target="_blank" rel="noopener noreferrer" href="https://springbone.itch.io/"><img width="36px" src="assets/itch.png" alt=""></a>
-            <a target="_blank" rel="noopener noreferrer" href="https://store.steampowered.com/curator/46112346-b_bone/"><img width="36px" src="assets/steam.png" alt=""></a>
+            <a target="_blank" rel="noopener noreferrer" href="https://store.steampowered.com/curator/46112346-b_bone/"><img width="36px" src="assets/steam.png" alt="Steam"></a>
         
         </div>
 
@@ -62,28 +70,25 @@
 
         <section class="about-section">
 
-            <div class="about-container" style="text-align: center;">
+            <div class="about-container">
 
-                <img width="226px" align="center" src="assets/bbone.png">
+                <img class="about-logo" src="assets/bbone.png" alt="bbone">
 
                 <p
                     class="about-intro"
-					align="center"
                     data-i18n="about_intro"
                 ></p>
 				
-				<p
-                    class="about-intro-mi"
-					data-i18n="about_midie"
-				></p>
+				<br/>
 				
-				<div style="text-align: center;">
-					<a target="_blank" rel="noopener noreferrer" href="https://space.bilibili.com/3706976955533766""><img width="50px" src="assets/bilibili.png" alt=""></a>
-					<a target="_blank" rel="noopener noreferrer" href="https://www.xiaohongshu.com/user/profile/69fd79730000000002002802"><img width="50px" src="assets/redbook.png" alt=""></a>
-					<a target="_blank" rel="noopener noreferrer" href="https://www.douyin.com/user/MS4wLjABAAAAd5XxffpjaclUMP0h3caZnVtTLOdEYkklSG_Ki1MOXWo67m5eyRnyNUwaBizKLQMW"><img width="50px" src="assets/douyin.png" alt=""></a>
-					<a target="_blank" rel="noopener noreferrer" href="https://x.com/_spring_bone"><img width="50px" src="assets/x.png" alt=""></a>
-					<p>📫 909937552@qq.com</p>
+				<div class="social-row">
+					<a target="_blank" rel="noopener noreferrer" href="https://space.bilibili.com/3706976955533766"><img src="assets/bilibili.png" alt="Bilibili"></a>
+					<a target="_blank" rel="noopener noreferrer" href="https://www.xiaohongshu.com/user/profile/69fd79730000000002002802"><img src="assets/redbook.png" alt="小红书"></a>
+					<a target="_blank" rel="noopener noreferrer" href="https://www.douyin.com/user/MS4wLjABAAAAd5XxffpjaclUMP0h3caZnVtTLOdEYkklSG_Ki1MOXWo67m5eyRnyNUwaBizKLQMW"><img src="assets/douyin.png" alt="抖音"></a>
+					<a target="_blank" rel="noopener noreferrer" href="https://x.com/_spring_bone"><img src="assets/x.png" alt="X"></a>
 				</div>
+
+				<p class="about-mail">📫 909937552@qq.com</p>
 
             </div>
 
@@ -100,6 +105,8 @@
 
 
     <script src="js/site.js"></script>
+    <script src="js/fx.js"></script>
+    <script type="module" src="js/pond.js"></script>
 
 </body>
 
