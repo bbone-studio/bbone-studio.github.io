@@ -3,19 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title data-i18n="about_title"></title>
+    <title data-i18n="about_title">关于我</title>
+    <meta name="description" content="bbone — 独立游戏开发者">
 
     <link rel="stylesheet" href="css/style.css">
-	<link rel="icon" href="assets/bbone_icon.png">
+    <link rel="icon" href="assets/bbone_icon.png">
+
     <script>
         // Apply the saved theme before first paint to avoid a flash.
         try {
-            if (localStorage.getItem("theme") === "dark") {
+            var savedTheme = new URLSearchParams(location.search).get("theme")
+                || localStorage.getItem("theme");
+
+            if (savedTheme === "dark") {
                 document.documentElement.classList.add("dark");
             }
         } catch (error) { /* storage unavailable */ }
@@ -24,71 +26,109 @@
 
 <body>
 
-    <header class="navbar">
+    <a class="skip-link" href="#main" data-i18n="skip_to_content">跳到主要内容</a>
 
-        <div class="nav-left">
-			<a class="social-icon" href="index.html">←</a>
-			<a target="_blank" rel="noopener noreferrer" href="https://afdian.com/a/bbone"><img width="36px" src="assets/aifadian.png" alt="爱发电"></a>
-			<a target="_blank" rel="noopener noreferrer" href="https://springbone.itch.io/"><img width="36px" src="assets/itch.png" alt=""></a>
-            <a target="_blank" rel="noopener noreferrer" href="https://store.steampowered.com/curator/46112346-b_bone/"><img width="36px" src="assets/steam.png" alt="Steam"></a>
-        
-        </div>
+    <header class="site-header">
+        <div class="header-inner">
 
-
-        <div class="nav-right">
-
-            <select id="language-select">
-                <option value="zh">中文</option>
-                <option value="en">English</option>
-                <option value="ja">日本語</option>
-                <option value="zh-tw">繁體中文</option>
-            </select>
-
-
-            <button
-                id="theme-toggle"
-                class="theme-btn"
-            >
-                ☾
-            </button>
-
-
-            <a
-                class="profile-link"
-                href="about.html"
-                data-i18n="profile"
-            >
-                个人主页
+            <a class="brand" href="index.html">
+                <img src="assets/bbone_icon.png" alt="bbone" width="26" height="26">
+                <span>bbone</span>
             </a>
 
-        </div>
+            <nav class="nav">
+                <a href="index.html" data-i18n="nav_games">游戏</a>
+                <a href="about.html" aria-current="page" data-i18n="nav_about">关于我</a>
+            </nav>
 
+            <div class="header-actions">
+                <select id="language-select" class="lang" data-i18n-label="language">
+                    <option value="zh">中文</option>
+                    <option value="en">English</option>
+                    <option value="ja">日本語</option>
+                    <option value="zh-tw">繁體中文</option>
+                </select>
+
+                <button id="theme-toggle" class="icon-btn" type="button">☾</button>
+            </div>
+
+        </div>
     </header>
 
 
-    <main class="page-main">
+    <main id="main">
 
-        <section class="about-section">
+        <div class="page-head">
+            <h1 data-i18n="about_title">关于我</h1>
+        </div>
 
-            <div class="about-container">
+        <section class="about-card">
 
-                <img class="about-logo" src="assets/bbone.png" alt="bbone">
+            <div class="about-main">
 
-                <p
-                    class="about-intro"
-                    data-i18n="about_intro"
-                ></p>
-				
-				<br/>
-				
-				<div class="social-row">
-					<a target="_blank" rel="noopener noreferrer" href="https://space.bilibili.com/3706976955533766"><img src="assets/bilibili.png" alt="Bilibili"></a>
-					<a target="_blank" rel="noopener noreferrer" href="https://www.xiaohongshu.com/user/profile/69fd79730000000002002802"><img src="assets/redbook.png" alt="小红书"></a>
-					<a target="_blank" rel="noopener noreferrer" href="https://www.douyin.com/user/MS4wLjABAAAAd5XxffpjaclUMP0h3caZnVtTLOdEYkklSG_Ki1MOXWo67m5eyRnyNUwaBizKLQMW"><img src="assets/douyin.png" alt="抖音"></a>
-					<a target="_blank" rel="noopener noreferrer" href="https://x.com/_spring_bone"><img src="assets/x.png" alt="X"></a>
-				</div>
+                <div class="about-head">
+                    <img class="about-logo" src="assets/bbone_icon.png" alt="bbone" width="64" height="64">
 
-				<p class="about-mail">📫 909937552@qq.com</p>
+                    <div>
+                        <h2 class="about-name">bbone</h2>
+                        <p class="about-role" data-i18n="about_role"></p>
+                    </div>
+                </div>
+
+                <p class="about-intro" data-i18n="about_intro"></p>
+
+                <div class="about-group">
+                    <h2 data-i18n="about_contact"></h2>
+
+                    <p class="about-mail">
+                        <a href="mailto:909937552@qq.com">909937552@qq.com</a>
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="about-side">
+
+                <div class="about-group">
+                    <h2 data-i18n="about_follow"></h2>
+
+                    <div class="link-list">
+                        <a class="link-chip" target="_blank" rel="noopener noreferrer" href="https://space.bilibili.com/3706976955533766">
+                            <img src="assets/bilibili.png" alt="">Bilibili
+                        </a>
+
+                        <a class="link-chip" target="_blank" rel="noopener noreferrer" href="https://www.xiaohongshu.com/user/profile/69fd79730000000002002802">
+                            <img src="assets/redbook.png" alt=""><span data-i18n="redbook"></span>
+                        </a>
+
+                        <a class="link-chip" target="_blank" rel="noopener noreferrer" href="https://www.douyin.com/user/MS4wLjABAAAAd5XxffpjaclUMP0h3caZnVtTLOdEYkklSG_Ki1MOXWo67m5eyRnyNUwaBizKLQMW">
+                            <img src="assets/douyin.png" alt=""><span data-i18n="douyin"></span>
+                        </a>
+
+                        <a class="link-chip" target="_blank" rel="noopener noreferrer" href="https://x.com/_spring_bone">
+                            <img src="assets/x.png" alt="">X
+                        </a>
+                    </div>
+                </div>
+
+                <div class="about-group">
+                    <h2 data-i18n="about_support"></h2>
+
+                    <div class="link-list">
+                        <a class="link-chip" target="_blank" rel="noopener noreferrer" href="https://afdian.com/a/bbone">
+                            <img src="assets/aifadian.png" alt=""><span data-i18n="afdian"></span>
+                        </a>
+
+                        <a class="link-chip" target="_blank" rel="noopener noreferrer" href="https://springbone.itch.io/">
+                            <img src="assets/itch.png" alt="">itch.io
+                        </a>
+
+                        <a class="link-chip" target="_blank" rel="noopener noreferrer" href="https://store.steampowered.com/curator/46112346-b_bone/">
+                            <img src="assets/steam.png" alt=""><span data-i18n="steam_curator"></span>
+                        </a>
+                    </div>
+                </div>
 
             </div>
 
@@ -97,16 +137,21 @@
     </main>
 
 
-    <footer>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p data-i18n="copyright"></p>
 
-        <p data-i18n="copyright"></p>
-
+            <div class="footer-links">
+                <a target="_blank" rel="noopener noreferrer" href="https://afdian.com/a/bbone" data-i18n="afdian"></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://springbone.itch.io/">itch.io</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://store.steampowered.com/curator/46112346-b_bone/" data-i18n="steam_curator"></a>
+                <a href="mailto:909937552@qq.com" data-i18n="contact_me"></a>
+            </div>
+        </div>
     </footer>
 
 
     <script src="js/site.js"></script>
-    <script src="js/fx.js"></script>
-    <script type="module" src="js/pond.js"></script>
 
 </body>
 

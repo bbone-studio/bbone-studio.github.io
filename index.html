@@ -4,13 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>bbone</title>
+    <meta name="description" content="bbone 制作的 bara、BL、furry 风格独立游戏">
+
     <link rel="stylesheet" href="css/style.css">
-	<link rel="icon" href="assets/bbone_icon.png">
+    <link rel="icon" href="assets/bbone_icon.png">
+
     <script>
         // Apply the saved theme before first paint to avoid a flash.
         try {
-            if (localStorage.getItem("theme") === "dark") {
+            var savedTheme = new URLSearchParams(location.search).get("theme")
+                || localStorage.getItem("theme");
+
+            if (savedTheme === "dark") {
                 document.documentElement.classList.add("dark");
             }
         } catch (error) { /* storage unavailable */ }
@@ -19,108 +26,125 @@
 
 <body>
 
-    <header class="navbar">
-        <div class="nav-left">
-            <a target="_blank" rel="noopener noreferrer" href="https://afdian.com/a/bbone"><img width="36px" src="assets/aifadian.png" alt="爱发电"></a>
-			<a target="_blank" rel="noopener noreferrer" href="https://springbone.itch.io/"><img width="36px" src="assets/itch.png" alt=""></a>
-            <a target="_blank" rel="noopener noreferrer" href="https://store.steampowered.com/curator/46112346-b_bone/"><img width="36px" src="assets/steam.png" alt="Steam"></a>
-        </div>
+    <a class="skip-link" href="#main" data-i18n="skip_to_content">跳到主要内容</a>
 
-        <div class="nav-right">
-            <select id="language-select">
-                <option value="zh">中文</option>
-                <option value="en">English</option>
-                <option value="ja">日本語</option>
-                <option value="zh-tw">繁體中文</option>
-            </select>
+    <header class="site-header">
+        <div class="header-inner">
 
-            <button id="theme-toggle" class="theme-btn">☾</button>
-
-            <a
-                class="profile-link"
-                href="about.html"
-                data-i18n="profile"
-            >
-                个人主页
+            <a class="brand" href="index.html">
+                <img src="assets/bbone_icon.png" alt="bbone" width="26" height="26">
+                <span>bbone</span>
             </a>
+
+            <nav class="nav">
+                <a href="index.html" aria-current="page" data-i18n="nav_games">游戏</a>
+                <a href="about.html" data-i18n="nav_about">关于我</a>
+            </nav>
+
+            <div class="header-actions">
+                <select id="language-select" class="lang" data-i18n-label="language">
+                    <option value="zh">中文</option>
+                    <option value="en">English</option>
+                    <option value="ja">日本語</option>
+                    <option value="zh-tw">繁體中文</option>
+                </select>
+
+                <button id="theme-toggle" class="icon-btn" type="button">☾</button>
+            </div>
+
         </div>
     </header>
 
 
-    <main class="page-main">
+    <main id="main">
 
-        <section class="games-section">
+        <div class="page-head">
+            <h1 data-i18n="games_title">游戏库</h1>
+            <p data-i18n="games_intro"></p>
+        </div>
 
-            <div class="section-title">
-                <h1 data-i18n="games_title"></h1>
-                <p data-i18n="games_intro"></p>
-            </div>
+        <div class="grid">
 
-
-            <div class="games-scroll">
-			
-				<a
-                    class="game-card"
-                    href="game/gympup.html"
-                >
+            <a class="card" href="game/gympup.html">
+                <div class="card-media">
                     <img
                         src="assets/gympup.jpg"
-                        class="game-cover"
+                        width="900"
+                        height="1200"
+                        data-i18n-alt="gympup"
                         alt="GymPup"
                     >
+                </div>
 
-                    <div class="game-info">
-                        <h2 data-i18n="gympup">GymPup</h2>
-                        <p data-i18n="gympup_type"></p>
+                <div class="card-body">
+                    <div class="card-title-row">
+                        <h2 data-i18n="gympup">健身小狗</h2>
+                        <span class="badge" data-i18n="status_dev"></span>
                     </div>
-                </a>
 
-				<a
-                    class="game-card"
-                    href="game/pondthing.html"
-                >
+                    <p class="card-type" data-i18n="gympup_type"></p>
+                    <p class="card-eta" data-i18n="gympup_eta"></p>
+                    <span class="card-cta" data-i18n="view_detail"></span>
+                </div>
+            </a>
+
+            <a class="card" href="game/pondthing.html">
+                <div class="card-media">
                     <img
                         src="assets/pondthing.jpg"
-                        class="game-cover"
+                        width="900"
+                        height="1200"
+                        data-i18n-alt="pondthing"
                         alt="PondThing"
                     >
+                </div>
 
-                    <div class="game-info">
-                        <h2 data-i18n="pondthing">PondThing</h2>
-                        <p data-i18n="pondthing_type"></p>
+                <div class="card-body">
+                    <div class="card-title-row">
+                        <h2 data-i18n="pondthing">池中物</h2>
+                        <span class="badge" data-i18n="status_dev"></span>
                     </div>
-                </a>
 
-                <a
-                    class="game-card"
-                    href="#"
-                >
-                    <div
-                        class="game-cover placeholder"
-                        data-i18n="coming_soon"
-                    ></div>
+                    <p class="card-type" data-i18n="pondthing_type"></p>
+                    <p class="card-eta" data-i18n="pondthing_eta"></p>
+                    <span class="card-cta" data-i18n="view_detail"></span>
+                </div>
+            </a>
 
-                    <div class="game-info">
-                        <h2 data-i18n="new_project"></h2>
-                        <p data-i18n="coming_soon"></p>
+            <div class="card card-static">
+                <div class="card-media placeholder">
+                    <span data-i18n="coming_soon"></span>
+                </div>
+
+                <div class="card-body">
+                    <div class="card-title-row">
+                        <h2 data-i18n="new_project">其他游戏</h2>
                     </div>
-                </a>
 
+                    <p class="card-type" data-i18n="new_project_note"></p>
+                </div>
             </div>
 
-        </section>
+        </div>
 
     </main>
 
 
-    <footer>
-        <p data-i18n="copyright"></p>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p data-i18n="copyright"></p>
+
+            <div class="footer-links">
+                <a target="_blank" rel="noopener noreferrer" href="https://afdian.com/a/bbone" data-i18n="afdian"></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://springbone.itch.io/">itch.io</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://store.steampowered.com/curator/46112346-b_bone/" data-i18n="steam_curator"></a>
+                <a href="about.html" data-i18n="contact_me"></a>
+            </div>
+        </div>
     </footer>
 
 
     <script src="js/site.js"></script>
-    <script src="js/fx.js"></script>
-    <script type="module" src="js/pond.js"></script>
 
 </body>
 
