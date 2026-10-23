@@ -542,6 +542,10 @@ a.card:hover .card-cta {
     display: none;
 }
 
+.badge-released::before {
+    background: #2f9e62;
+}
+
 
 /* =========================================================
    6. Game detail
