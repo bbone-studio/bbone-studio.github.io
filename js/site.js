@@ -33,7 +33,7 @@ const I18N = {
         status_released: "已上线",
         coming_soon: "敬请期待",
         view_detail: "查看详情",
-        download_baidu: "百度网盘下载",
+        download_itch: "itch.io 下载",
         home: "首页",
 
         ourchat_type: "桌宠、AI 智能体、聊天模拟器",
@@ -98,7 +98,7 @@ const I18N = {
         status_released: "Released",
         coming_soon: "Coming soon",
         view_detail: "View details",
-        download_baidu: "Download from Baidu Netdisk",
+        download_itch: "Download from itch.io",
         home: "Home",
 
         ourchat_type: "Desktop pet, AI agent, chat simulator",
@@ -163,7 +163,7 @@ const I18N = {
         status_released: "Доступно",
         coming_soon: "Скоро",
         view_detail: "Подробнее",
-        download_baidu: "Скачать с Baidu Netdisk",
+        download_itch: "Скачать с itch.io",
         home: "Главная",
 
         ourchat_type: "Питомец на рабочем столе, ИИ-агент, симулятор общения",
@@ -228,7 +228,7 @@ const I18N = {
         status_released: "公開中",
         coming_soon: "お楽しみに",
         view_detail: "詳細を見る",
-        download_baidu: "Baidu Netdisk からダウンロード",
+        download_itch: "itch.io からダウンロード",
         home: "ホーム",
 
         ourchat_type: "デスクトップペット、AIエージェント、チャットシミュレーター",
@@ -293,7 +293,7 @@ const I18N = {
         status_released: "已上線",
         coming_soon: "敬請期待",
         view_detail: "查看詳情",
-        download_baidu: "百度網盤下載",
+        download_itch: "從 itch.io 下載",
         home: "首頁",
 
         ourchat_type: "桌寵、AI 智能體、聊天模擬器",
